@@ -15,11 +15,17 @@ class CreateDemandeursTable extends Migration
     {
         Schema::create('demandeurs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('reseau_id')->constrained();
+            // $table->foreignId('reseau_id')->constrained();
             $table->string('nom');
             $table->string('prenom');
+            $table->string('email');
             $table->string('contact');
             $table->string('localite');
+            // $table->string('dateNaissance');
+            $table->string('longitude');
+            $table->string('latitude');
+            $table->string('file_path');
+           
             $table->timestamps();
         });
     }

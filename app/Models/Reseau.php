@@ -15,8 +15,8 @@ class Reseau extends Model
     ];
 
 
-    public function demandeur(){
-        return $this->hasMany('App\Models\Demandeur');
-    }
+    // public function demandeur(){
+    //     return $this->hasMany('App\Models\Demandeur');
+    // }
 
 }

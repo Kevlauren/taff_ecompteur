@@ -35,7 +35,7 @@
                     <li><a class="nav-link scrollto active" href="#hero">Acceuil</a></li>
                     <li><a class="nav-link scrollto" href="#about" style="margin-left:40px;">A propos</a></li>
                     <li><a class="nav-link scrollto" href="#contact" style="margin-left:40px;">Contact</a></li>
-                    <a href="" class="btn btn-primary text-center" style="margin-left:40px;">Consulter statut demande</a>
+                    <a href="{{route('consult')}}" class="btn btn-primary text-center" style="margin-left:40px;">Consulter statut demande</a>
                     <ul>
             </nav><!-- .navbar -->
         </div>
@@ -52,7 +52,7 @@
                     <h2>Depuis plus de 40 ans, la SBEE se distingue par son expertise en Production d'Electricité, Distribution d'Electricité, Eclairage public...</h2>
                     <div class="d-flex justify-content-center justify-content-lg-start">
                         <!-- <a href="#about" class="btn-get-started scrollto"> Faire une demande</a> -->
-                        <a href="{{route('index')}}" class="btn btn-success scrollto"> Faire une demande</a>
+                        <a href="{{route('forms.index')}}" class="btn btn-success scrollto"> Faire une demande</a>
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
