@@ -31,8 +31,9 @@ class Demande extends Model
 
     }
 
-    // public function user(){
-    //     return $this->hasMany(User::class);
+    public function user(){
+        return $this->hasMany(User::class);
 
-    // }
+    }
 }
+                                                                                                                                                                                                                                                                                                                                                                                                                            

@@ -19,6 +19,10 @@ class CreateDemandesTable extends Migration
             $table->id();
             
             $table->unsignedBigInteger('demandeur_id'); 
+
+            $table->string('nom');
+            
+            $table->string('prenom');
             
             $table->foreign('demandeur_id')->references('id')->on('demandeurs');
             
