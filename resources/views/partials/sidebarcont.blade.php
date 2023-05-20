@@ -1,8 +1,8 @@
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('/') }}">
-                <div class="sidebar-brand-text mx-3">{{ __('ESPACE SBEE') }}</div>
+                <div class="sidebar-brand-text mx-3" style="margin-top: 10px"><img src="{{ asset('/images/logocont-removebg.png') }}" alt="" width="70px" height="70px"></div>
             </a>
 
             <!-- Divider -->

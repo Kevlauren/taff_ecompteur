@@ -36,7 +36,9 @@
                                 <th>Nom demandeur</th>
                                 <th>Prenom demandeur</th>
                                 <th> Heure de début</th>
-                                <th> Heure de fin</th>
+                                <th> Localite</th>
+                                <th> Longitude</th>
+                                <th> Latitude</th>                            
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -49,15 +51,9 @@
                                 <td>{{ $visite->demandeur->nom }}</td>
                                 <td>{{ $visite->demandeur->prenom }}</td>
                                 <td>{{ $visite->start_time }}</td>
-                                <td>{{ $visite->finish_time }}</td>
-                                
-                                {{-- <td>
-                                    @if($client->photo)
-                                        <a href="{{ $client->photo->getUrl() }}" target="_blank">
-                                            <img src="{{ $client->photo->getUrl() }}" width="50px" height="50px">
-                                        </a>
-                                    @endif
-                                </td> --}}
+                                <td>{{ $visite->demandeur->localite }}</td>
+                                <td>{{ $visite->demandeur->longitude }}</td>
+                                <td>{{ $visite->demandeur->latitude }}</td>                                                
                                 <td>
                                     <div class="btn-group btn-group-sm">
                                         <a href="{{ route('agentsbee.visites.edit', $visite->id) }}" class="btn btn-info">

@@ -16,19 +16,17 @@ class CreateDemandesTable extends Migration
     public function up()
     {
         Schema::create('demandes', function (Blueprint $table) {
-            $table->id();
+            $table->id();  
+            $table->unsignedBigInteger('demandeur_id');
+            // $table->string('nom');            
+            // $table->string('prenom');
+            // $table->foreignId('demandeur_id')->constrained();
             
-            $table->unsignedBigInteger('demandeur_id'); 
-
-            $table->string('nom');
-            
-            $table->string('prenom');
-            
-            $table->foreign('demandeur_id')->references('id')->on('demandeurs');
+            $table->foreign('demandeur_id')->references('id')->on('demandeurs')->onDelete('cascade');
             
             $table->timestamps();
 
-           
+            Schema::enableForeignKeyConstraints();          
 
 
             // $table->foreignIdFor(User::class);

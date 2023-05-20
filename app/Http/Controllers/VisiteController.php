@@ -41,9 +41,8 @@ class VisiteController extends Controller
     public function store(Request $request)
     {
         Visite::create([
-            'idDemandeur' => $request->demandeur_id,
-            'start' => $request->start_time,
-            'finish' => $request->finish_time,
+            'demandeur_id' => $request->demandeur_id,
+            'start_time' => $request->start_time,
             'comments' => $request->comments
         ]);
         // $visite->services()->sync($request->input('services', []));

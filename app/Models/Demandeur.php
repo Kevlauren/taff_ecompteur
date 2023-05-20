@@ -14,6 +14,7 @@ class Demandeur extends Model
         'prenom',
         'contact',
         'localite',
+        'file_path',
 
     ];
 

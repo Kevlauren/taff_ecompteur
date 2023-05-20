@@ -56,7 +56,7 @@ Route::get('/dashboard', function () {
     if (Auth::check()) {
         if (Auth::user()->is_admin == 0) {
             if (Auth::user()->role == 'SBEE') {
-                return view('agentsbee.index');
+                return view('agentsbee.dashboard');
             } elseif (Auth::user()->role == 'CONTRELEC') {
                 return view('agentcont.indexcont');
             } 

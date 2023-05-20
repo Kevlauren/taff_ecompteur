@@ -16,6 +16,7 @@ class SendingController extends Controller
 
     public function store(Request $request)
     {
+        $input = $request->all();
 
         //  récupérer les données du formulaire
         $nom = $request->input('nom');
@@ -25,11 +26,12 @@ class SendingController extends Controller
         $reseau = $request->input('localite');
         $longitude = $request->input('longitude');
         $latitude = $request->input('latitude');
-        $file = $request->file('certificat');
+        $file = $request->file('cip');
 
-
+        $destination_path = 'public/images/uploads';
         $fileName = time() . '_' . $file->getClientOriginalName();
-        $filePath = $file->storeAs('uploads', $fileName, 'public');
+        // $filePath = $file->storeAs('uploads', $fileName, 'public');
+        $filePath = $request->file('cip')->storeAs($destination_path, $fileName);
 
         // Appeler la méthode createWithDemandeurId pour créer une nouvelle demande
         //    Demande::createWithDemandeurId($nom, $prenom);
@@ -37,14 +39,14 @@ class SendingController extends Controller
 
         //  Insérer les données dans la base de données
         DB::table('demandeurs')->insert([
-            'nom' => $nom,
+            'nom' => $nom,  
             'prenom' => $prenom,
             'email' => $email,
             'contact' => $contact,
             'localite' => $reseau,
             'longitude' => $longitude,
             'latitude' => $latitude,
-            'file_path' => $filePath,
+            'file_path' => $fileName,
         ]);
 
 

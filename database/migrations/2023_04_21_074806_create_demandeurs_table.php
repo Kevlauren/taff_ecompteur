@@ -20,8 +20,7 @@ class CreateDemandeursTable extends Migration
             $table->string('prenom');
             $table->string('email');
             $table->string('contact');
-            $table->string('localite');
-            // $table->string('dateNaissance');
+            $table->string('localite');           
             $table->string('longitude');
             $table->string('latitude');
             $table->string('file_path');

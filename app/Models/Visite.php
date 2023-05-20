@@ -11,7 +11,7 @@ class Visite extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['id', 'start_time', 'finish_time', 'created_at', 'updated_at'];
+    protected $guarded = ['id', 'start_time', 'created_at', 'updated_at'];
 
     public function demandeur(){
         return $this->belongsTo(Demandeur::class);

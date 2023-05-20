@@ -117,8 +117,8 @@
                                 <div class="form-group col-md-12">
                                     <label for="localite">Localité</label>
                                     <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
-                                        name="localite">
-                                        <option> Ayimlonfidé</option>
+                                        name="localite" id="localite">
+                                        
                                         @foreach ($reseaus as $reseau)
                                             <option value="{{ $reseau->localite}}">{{ $reseau->localite }}</option>
                                         @endforeach
@@ -144,7 +144,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="fichier">Certificat d'Identité Personelle</label>
-                                <input type="file" class="form-control-file" id="fichier" name="certificat" required>
+                                <input type="file" class="form-control-file" id="cip" name="cip" required>
                             </div>
                             <button type="submit" class="btn btn-primary">Envoyer</button>
                         </form>

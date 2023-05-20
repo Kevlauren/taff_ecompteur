@@ -14,9 +14,9 @@ class AddColumn extends Migration
     public function up()
     {
         schema::table('demandeurs', function(Blueprint $table){
-            $table->date('dateNaissance');
-            $table->float('longitude');
-            $table->float('latitude');
+            // $table->date('dateNaissance');
+            // $table->float('longitude');
+            // $table->float('latitude');
         });
     }
 

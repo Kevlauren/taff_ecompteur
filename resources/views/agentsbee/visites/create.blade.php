@@ -29,7 +29,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="Demandeur">{{ __('Demandeur') }}</label>
-                        <select name="idDemandeur" id="idDemandeur" class="form-control">
+                        <select name="demandeur_id" id="demandeur_id" class="form-control">
                             @foreach ($demandeurs as $demandeur)
                                 <option value="{{ $demandeur->id }}">{{ $demandeur->id }} -  {{ $demandeur->nom }} {{ $demandeur->prenom }}</option>
                             @endforeach
@@ -38,14 +38,10 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="start">{{ __('Start_time') }}</label>
-                       <input name="start" id="start" type="datetime-local" class="form-control" >
+                        <label for="start_time">{{ __('Start time') }}</label>
+                       <input name="start_time" id="start_time" type="datetime-local" class="form-control" >
                     </div>
 
-                    <div class="form-group">
-                        <label for="finish">{{ __('Finish_time') }}</label>
-                        <input name="finish" id="finish" type="datetime-local" class="form-control">
-                     </div>
 
                      <div class="form-group">
                         <label for="comment">{{ __('Comments') }}</label>

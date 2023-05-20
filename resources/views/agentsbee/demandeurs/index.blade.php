@@ -28,9 +28,12 @@
                                 {{-- <th>Id demandeur</th> --}}
                                 <th>Nom demandeur</th>
                                 <th>Prenom demandeur</th>
+                                <th>Email</th>
+                                <th>Contact</th>
                                 <th>Localite</th>
-                                {{-- <th>Phone</th>
-                                <th>Photo</th> --}}
+                                <th>Longitude</th> 
+                                <th>Latitude</th> 
+                                <th>Image</th> 
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -38,25 +41,28 @@
                             @forelse($demandeurs as $demandeur)
                             <tr data-entry-id="{{ $demandeur->id }}">
                               
-                                <td>{{ $demandeur->id }}</td>
-                            
+                                <td>{{ $demandeur->id }}</td>                                
                                 <td>{{ $demandeur->nom }}</td>
                                 <td>{{ $demandeur->prenom }}</td>
+                                <td>{{ $demandeur->email }}</td>
+                                <td>{{ $demandeur->contact }}</td>
                                 <td>{{ $demandeur->localite }}</td>
-                                
-                                {{-- <td>
-                                    @if($client->photo)
-                                        <a href="{{ $client->photo->getUrl() }}" target="_blank">
-                                            <img src="{{ $client->photo->getUrl() }}" width="50px" height="50px">
-                                        </a>
-                                    @endif
-                                </td> --}}
+                                <td>{{ $demandeur->longitude }}</td>
+                                <td>{{ $demandeur->latitude }}</td>
                                 <td>
+                                   
+                                    <img src="{{ asset('/storage/images/uploads/'.$demandeur->file_path) }}" width="50px" height="50px">
+                                   
+                                </td>
+                                
+
+                                <td>                                    
+                               
                                     <div class="btn-group btn-group-sm">
                                         {{-- <a href="{{ route('admin.clients.edit', $client->id) }}" class="btn btn-info">
                                             <i class="fa fa-pencil-alt"></i>
                                         </a> --}}
-                                        <form onclick="return confirm('are you sure ? ')" class="d-inline" action="{{ route('agentsbee.demandeurs.destroy', $demandeur->id) }}" method="POST">
+                                        <form onclick="return confirm('are you sure ? ')" class="d-inline" action="{{ route('agentsbee.demandeur.destroy', $demandeur->id) }}" method="POST">
                                             @csrf
                                             @method('delete')
                                             <button class="btn btn-danger" style="border-top-left-radius: 0;border-bottom-left-radius: 0;">
