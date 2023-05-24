@@ -27,6 +27,7 @@ class CreateDemandesTable extends Migration
 
             $table->timestamps();
 
+
         });
     }
 
