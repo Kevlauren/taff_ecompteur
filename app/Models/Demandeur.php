@@ -21,7 +21,7 @@ class Demandeur extends Model
 
 
     public function demande(){
-    // return $this->belongsTo('Model', 'foreign_key', 'owner_key'); 
+    // return $this->belongsTo('Model', 'foreign_key', 'owner_key');
         return $this->hasMany(Demande::class);
 
     }
