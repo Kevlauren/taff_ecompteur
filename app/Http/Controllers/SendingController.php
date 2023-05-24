@@ -8,16 +8,11 @@ use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\DB;
 
-
 class SendingController extends Controller
 {
-
-
-
     public function store(Request $request)
     {
         $input = $request->all();
-
         //  récupérer les données du formulaire
         $nom = $request->input('nom');
         $prenom = $request->input('prenom');
@@ -33,10 +28,6 @@ class SendingController extends Controller
         // $filePath = $file->storeAs('uploads', $fileName, 'public');
         $filePath = $request->file('cip')->storeAs($destination_path, $fileName);
 
-        // Appeler la méthode createWithDemandeurId pour créer une nouvelle demande
-        //    Demande::createWithDemandeurId($nom, $prenom);
-
-
         //  Insérer les données dans la base de données
         DB::table('demandeurs')->insert([
             'nom' => $nom,  
@@ -49,19 +40,6 @@ class SendingController extends Controller
             'file_path' => $fileName,
         ]);
 
-
-        // $demandeur = Demande::create($request->only(['nom', 'prenom']));
-        // $id_demandeur = $demandeur->id;
-        // $demande = new Demande();
-        // $demande->nom = $request->input('nom');
-        // $demande->prenom = $request->input('prenom');
-        // // ...
-
-        // $demande->demandeur_id = $id_demandeur;
-
-        // $demande->save();
-
-
         $data = $request->all();
 
         if ($data) {
@@ -73,3 +51,4 @@ class SendingController extends Controller
         }
     }
 }
+

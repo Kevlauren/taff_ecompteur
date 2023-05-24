@@ -18,20 +18,10 @@ class CreateDemandesTable extends Migration
         Schema::create('demandes', function (Blueprint $table) {
             $table->id();  
             $table->unsignedBigInteger('demandeur_id');
-            // $table->string('nom');            
-            // $table->string('prenom');
-            // $table->foreignId('demandeur_id')->constrained();
             
             $table->foreign('demandeur_id')->references('id')->on('demandeurs')->onDelete('cascade');
-            
-            $table->timestamps();
-
-            Schema::enableForeignKeyConstraints();          
-
-
-            // $table->foreignIdFor(User::class);
-            // $table->foreignIdFor(Demandeur::class);
-
+            // $table->foreignIdFor(Demandeur::class)->nullable()->constrained();            
+            $table->timestamps(); 
 
         });
     }
