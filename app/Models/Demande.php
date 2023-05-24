@@ -8,23 +8,29 @@ use Illuminate\Database\Eloquent\Model;
 class Demande extends Model
 {
     use HasFactory;
-    protected $guarded = [];
+    protected $guarded = [
+    'id',
+    'nom',
+    'prenom',
+    'contact',
+    'localite',];
 
     protected $fillable = [
+        'id',
         'nom',
         'prenom',
         'contact',
         'localite',
     ];
 
-    public static function boot(){
-        parent::boot();
-        self::creating(function($demande){
-            $demande->user()->associate(auth()->user()->id);
-            $demande->demandeur()->associate(request()->id);
+    // public static function boot(){
+    //     parent::boot();
+    //     self::creating(function($demande){
+    //         $demande->user()->associate(auth()->user()->id);
+    //         $demande->demandeur()->associate(request()->id);
 
-        });
-    }
+    //     });
+    // }
 
     public function demandeur(){
         return $this->belongsTo(Demandeur::class);
@@ -36,4 +42,3 @@ class Demande extends Model
 
     }
 }
-                                                                                                                                                                                                                                                                                                                                                                                                                            

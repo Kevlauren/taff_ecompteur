@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Demandeur;
 use Illuminate\Database\Seeder;
 
 class DemandeSeeder extends Seeder
@@ -13,6 +14,10 @@ class DemandeSeeder extends Seeder
      */
     public function run()
     {
-        //
+
+        $demandeur = Demandeur::factory()->create();
+
+        $demandeur->demande()->create();
+
     }
 }
