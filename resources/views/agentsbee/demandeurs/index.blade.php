@@ -51,7 +51,7 @@
                                 <td>{{ $demandeur->latitude }}</td>
                                 <td>
                                    
-                                    <img src="{{ asset('/storage/images/uploads/'.$demandeur->file_path) }}" width="50px" height="50px">
+                                    <img src="{{ asset('/storage/images/cip/'.$demandeur->file) }}" width="50px" height="50px">
                                    
                                 </td>
                                 

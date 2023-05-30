@@ -23,7 +23,7 @@ class CreateDemandeursTable extends Migration
             $table->string('localite');           
             $table->string('longitude');
             $table->string('latitude');
-            $table->string('file_path');
+            $table->string('file');
            
             $table->timestamps();
         });

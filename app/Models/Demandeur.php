@@ -10,19 +10,23 @@ class Demandeur extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id',
         'nom',
         'prenom',
+        'email',
         'contact',
         'localite',
-        'file_path',
+        'longitude',
+        'latitude',
+        'file',
 
     ];
 
 
-    public function demandeur()
-    {
-       // return $this->belongsTo('Model', 'foreign_key', 'owner_key'); 
-       return $this->belongsTo('App\Models\Reseau', 'reseau_id', 'id');
+    public function demande(){
+    // return $this->belongsTo('Model', 'foreign_key', 'owner_key'); 
+        return $this->hasMany(Demande::class);
+
     }
 
 }

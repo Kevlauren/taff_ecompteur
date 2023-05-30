@@ -8,59 +8,24 @@ use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\DB;
 
-
 class SendingController extends Controller
 {
-
-
-
     public function store(Request $request)
     {
         $input = $request->all();
 
-        //  récupérer les données du formulaire
-        $nom = $request->input('nom');
-        $prenom = $request->input('prenom');
-        $email = $request->input('email');
-        $contact = $request->input('contact');
-        $reseau = $request->input('localite');
-        $longitude = $request->input('longitude');
-        $latitude = $request->input('latitude');
-        $file = $request->file('cip');
+        if ($request->hasFile('file')) {
+            $destination_path = 'public/images/cip';
+            $file = $request->file('file');
+            $fileName = $file->getClientOriginalName();
+            $path = $request->file('file')->storeAs($destination_path,$fileName);
 
-        $destination_path = 'public/images/uploads';
-        $fileName = time() . '_' . $file->getClientOriginalName();
-        // $filePath = $file->storeAs('uploads', $fileName, 'public');
-        $filePath = $request->file('cip')->storeAs($destination_path, $fileName);
+            $input['file'] = $fileName;
+            
+        }
+        $demandeur = Demandeur::create($input);
 
-        // Appeler la méthode createWithDemandeurId pour créer une nouvelle demande
-        //    Demande::createWithDemandeurId($nom, $prenom);
-
-
-        //  Insérer les données dans la base de données
-        DB::table('demandeurs')->insert([
-            'nom' => $nom,  
-            'prenom' => $prenom,
-            'email' => $email,
-            'contact' => $contact,
-            'localite' => $reseau,
-            'longitude' => $longitude,
-            'latitude' => $latitude,
-            'file_path' => $fileName,
-        ]);
-
-
-        // $demandeur = Demande::create($request->only(['nom', 'prenom']));
-        // $id_demandeur = $demandeur->id;
-        // $demande = new Demande();
-        // $demande->nom = $request->input('nom');
-        // $demande->prenom = $request->input('prenom');
-        // // ...
-
-        // $demande->demandeur_id = $id_demandeur;
-
-        // $demande->save();
-
+        $demandeur->demande()->create();
 
         $data = $request->all();
 

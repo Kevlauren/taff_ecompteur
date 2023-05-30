@@ -43,13 +43,14 @@
                         </thead>
                         <tbody>
                             @forelse($demandes as $demande)
+                            
                             <tr data-entry-id="{{ $demande->id }}">
                               
                                 <td>{{ $demande->id }}</td>
                                 <td>{{ $demande->demandeur->id }}</td>
-                                <td>{{ $demande->demandeur->nom }}</td>
+                                {{-- <td>{{ $demande->demandeur->nom }}</td>
                                 <td>{{ $demande->demandeur->prenom }}</td>
-                                <td>{{ $demande->demandeur->localite }}</td>
+                                <td>{{ $demande->demandeur->localite }}</td> --}}
                                 
                                 {{-- <td>
                                     @if($client->photo)

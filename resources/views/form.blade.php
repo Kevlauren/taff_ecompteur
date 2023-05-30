@@ -144,7 +144,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="fichier">Certificat d'Identité Personelle</label>
-                                <input type="file" class="form-control-file" id="cip" name="cip" required>
+                                <input type="file" class="form-control-file" id="file" name="file" required>
                             </div>
                             <button type="submit" class="btn btn-primary">Envoyer</button>
                         </form>
