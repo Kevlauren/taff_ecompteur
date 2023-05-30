@@ -13,15 +13,18 @@ class Demandeur extends Model
         'id',
         'nom',
         'prenom',
+        'email',
         'contact',
         'localite',
-        'file_path',
+        'longitude',
+        'latitude',
+        'file',
 
     ];
 
 
     public function demande(){
-    // return $this->belongsTo('Model', 'foreign_key', 'owner_key');
+    // return $this->belongsTo('Model', 'foreign_key', 'owner_key'); 
         return $this->hasMany(Demande::class);
 
     }

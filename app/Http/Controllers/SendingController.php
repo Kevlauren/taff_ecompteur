@@ -13,32 +13,19 @@ class SendingController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        //  récupérer les données du formulaire
-        $nom = $request->input('nom');
-        $prenom = $request->input('prenom');
-        $email = $request->input('email');
-        $contact = $request->input('contact');
-        $reseau = $request->input('localite');
-        $longitude = $request->input('longitude');
-        $latitude = $request->input('latitude');
-        $file = $request->file('cip');
 
-        $destination_path = 'public/images/uploads';
-        $fileName = time() . '_' . $file->getClientOriginalName();
-        // $filePath = $file->storeAs('uploads', $fileName, 'public');
-        $filePath = $request->file('cip')->storeAs($destination_path, $fileName);
+        if ($request->hasFile('file')) {
+            $destination_path = 'public/images/cip';
+            $file = $request->file('file');
+            $fileName = $file->getClientOriginalName();
+            $path = $request->file('file')->storeAs($destination_path,$fileName);
 
-        //  Insérer les données dans la base de données
-        DB::table('demandeurs')->insert([
-            'nom' => $nom,  
-            'prenom' => $prenom,
-            'email' => $email,
-            'contact' => $contact,
-            'localite' => $reseau,
-            'longitude' => $longitude,
-            'latitude' => $latitude,
-            'file_path' => $fileName,
-        ]);
+            $input['file'] = $fileName;
+            
+        }
+        $demandeur = Demandeur::create($input);
+
+        $demandeur->demande()->create();
 
         $data = $request->all();
 
@@ -51,4 +38,3 @@ class SendingController extends Controller
         }
     }
 }
-

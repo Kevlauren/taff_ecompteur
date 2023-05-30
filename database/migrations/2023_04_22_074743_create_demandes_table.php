@@ -16,17 +16,14 @@ class CreateDemandesTable extends Migration
     public function up()
     {
         Schema::create('demandes', function (Blueprint $table) {
-            $table->id();
-
+            $table->id(); 
+            
             $table->foreignId('demandeur_id');
             $table->foreign('demandeur_id')
                 ->references('id')
                 ->on('demandeurs')
                 ->onDelete('cascade');
-            // $table->foreignIdFor(Demandeur::class)->nullable()->constrained();
-
-            $table->timestamps();
-
+            $table->timestamps(); 
 
         });
     }
@@ -39,6 +36,6 @@ class CreateDemandesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('demandes');
-
+        
     }
 }

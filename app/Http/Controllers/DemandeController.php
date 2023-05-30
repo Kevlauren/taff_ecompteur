@@ -19,9 +19,9 @@ class DemandeController extends Controller
      */
     public function index()
     {
-        $demandes = Demande::latest()->paginate(2);
+        $demandes = Demande::all();
         // return view('admin.demandes.index', compact('demandes'));
-
+      
         if (Auth::check()) {
             if (Auth::user()->is_admin == 1) {
                 

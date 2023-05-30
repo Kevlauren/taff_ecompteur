@@ -8,19 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Demande extends Model
 {
     use HasFactory;
-    protected $guarded = [
-    'id',
-    'nom',
-    'prenom',
-    'contact',
-    'localite',];
+    // protected $guarded = [
+    // 'id',
+    // 'nom',
+    // 'prenom',
+    // 'contact',
+    // 'localite',];
 
     protected $fillable = [
         'id',
-        'nom',
-        'prenom',
-        'contact',
-        'localite',
+        'demandeur_id',
     ];
 
     // public static function boot(){
@@ -42,3 +39,4 @@ class Demande extends Model
 
     }
 }
+                                                                                                                                                                                                                                                                                                                                                                                                                            
