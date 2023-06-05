@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
 class Demandeur extends Model
 {
-    use HasFactory;
+    use HasFactory, Notifiable;
 
     protected $fillable = [
         'id',
@@ -24,7 +25,7 @@ class Demandeur extends Model
 
 
     public function demande(){
-    // return $this->belongsTo('Model', 'foreign_key', 'owner_key'); 
+    // return $this->belongsTo('Model', 'foreign_key', 'owner_key');
         return $this->hasMany(Demande::class);
 
     }

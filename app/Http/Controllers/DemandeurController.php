@@ -21,10 +21,10 @@ class DemandeurController extends Controller
 
         if (Auth::check()) {
             if (Auth::user()->is_admin == 1) {
-                
-                return view('admin.demandeur.index', compact('demandeurs')); 
+
+                return view('admin.demandeur.index', compact('demandeurs'));
             }else {
-                
+
                 return view('agentsbee.demandeurs.index', compact('demandeurs'));
             }
         }
@@ -76,7 +76,7 @@ class DemandeurController extends Controller
      */
     public function edit(Demandeur $demandeur)
     {
-        return view('admin.demandeur.edit', compact('demandeur')); 
+        return view('admin.demandeur.edit', compact('demandeur'));
     }
 
     /**
@@ -93,21 +93,21 @@ class DemandeurController extends Controller
             'prenom' => 'required',
             'contact' => 'required',
             'localite' => 'required',
-            
+
         ]);
 
         $demandeur->update([
             'nom' => $request->nom,
             'prenom' => $request->prenom,
             'contact' => $request->contact,
-            'localite' => $request->localite,         
+            'localite' => $request->localite,
 
 
         ]);
 
         return redirect()->route('admin.demandeur.index')->with('success', 'Modification effectué avec succès');
 
-        
+
     }
 
     /**

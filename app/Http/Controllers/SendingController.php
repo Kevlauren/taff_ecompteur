@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Demandeur;
 use App\Models\Demande;
+use App\Notifications\NotifyUserOnRequest;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\DB;
@@ -21,15 +22,22 @@ class SendingController extends Controller
             $path = $request->file('file')->storeAs($destination_path,$fileName);
 
             $input['file'] = $fileName;
-            
+
         }
         $demandeur = Demandeur::create($input);
 
-        $demandeur->demande()->create();
+        $demande = $demandeur->demande()->create([
+            'no_demande' => substr(bin2hex(random_bytes(9)), 0, 12)
+        ]);
 
         $data = $request->all();
 
         if ($data) {
+
+            // Here we notify the use with a mail that hold the demand number
+
+            $demandeur->notify(new NotifyUserOnRequest($demande->no_demande));
+
             Alert::success('Félicitations', 'Votre demande a été enregistrée avec succès');
             return back();
         } else {

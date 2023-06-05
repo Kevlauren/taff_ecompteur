@@ -31,6 +31,7 @@ Route::get('/', function () {
 });
 
 Route::get('consultation', [ConsultingController::class, 'consult'])->name('consult');
+Route::post('consultation-execute', [ConsultingController::class, 'GetDemand'])->name('consult.execute');
 
 Route::resource('forms', FormController::class);
 
@@ -41,14 +42,14 @@ Route::resource('forms', FormController::class);
 Route::resource('data', SendingController::class);
 
 
-Route::get('/download', function(){
+Route::get('/download', function(Request $request){
     $file = public_path()."/sbeeDoc.pdf";
 
     $headers = array(
         'Content-Type: sbee/pdf',
     );
-    
-    return Response::download($file, "SBEE_DOC.pdf", $headers);
+
+    return response()->download($file, "SBEE_DOC.pdf", $headers);
 });
 
 Route::get('/dashboard', function () {
@@ -59,7 +60,7 @@ Route::get('/dashboard', function () {
                 return view('agentsbee.dashboard');
             } elseif (Auth::user()->role == 'CONTRELEC') {
                 return view('agentcont.indexcont');
-            } 
+            }
         }else {
             return view('admin.index');
         }
@@ -74,13 +75,13 @@ Route::middleware(['auth', 'admin'])->name('admin.')->prefix('admin')->group(fun
     Route::get('/downloadPdf/{id}', [DemandeController::class, 'downloadPdf'])->name('downloadPdf');
 
     Route::resource('users', UserController::class);
-    
+
     Route::resource('demandes', DemandeController::class);
     Route::resource('demandeur', DemandeurController::class);
 });
 
 Route::middleware(['auth', 'agentsbee'])->name('agentsbee.')->prefix('agentsbee')->group(function () {
-    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');    
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
     Route::get('/', [UserController::class, 'index'])->name('index');
     Route::get('/demandes/downloadPdf/{id}', [DemandeController::class, 'downloadPdf'])->name('downloadPdf');

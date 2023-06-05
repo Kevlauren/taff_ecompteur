@@ -11,5 +11,5 @@ class FormController extends Controller
         $reseaus = Reseau::all();
         return view('form', compact('reseaus'));
     }
-     
+
 }

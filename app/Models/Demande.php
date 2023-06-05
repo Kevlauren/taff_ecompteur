@@ -17,7 +17,7 @@ class Demande extends Model
 
     protected $fillable = [
         'id',
-        'demandeur_id',
+        'demandeur_id', 'no_demande','status'
     ];
 
     // public static function boot(){
@@ -39,4 +39,3 @@ class Demande extends Model
 
     }
 }
-                                                                                                                                                                                                                                                                                                                                                                                                                            

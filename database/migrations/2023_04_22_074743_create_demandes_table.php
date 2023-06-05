@@ -16,14 +16,18 @@ class CreateDemandesTable extends Migration
     public function up()
     {
         Schema::create('demandes', function (Blueprint $table) {
-            $table->id(); 
-            
+            $table->id();
+
+            $table->string('no_demande');
+
+            $table->integer('status')->default(0);
+
             $table->foreignId('demandeur_id');
             $table->foreign('demandeur_id')
                 ->references('id')
                 ->on('demandeurs')
                 ->onDelete('cascade');
-            $table->timestamps(); 
+            $table->timestamps();
 
         });
     }
@@ -36,6 +40,6 @@ class CreateDemandesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('demandes');
-        
+
     }
 }
