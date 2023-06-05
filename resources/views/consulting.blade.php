@@ -15,7 +15,7 @@
 body {
   background-color: #f1f1f1;
 }
-#regForm {
+#theform {
   background-color: #ffffff;
   margin: 100px auto;
   font-family: "roboto";
@@ -27,7 +27,7 @@ body {
 }
 
 h1 {
-  text-align: center;  
+  text-align: center;
   /* text-decoration: underline; */
   font-family: "roboto";
 }
@@ -70,7 +70,7 @@ button:hover {
   width: 15px;
   margin: 0 2px;
   background-color: #bbbbbb;
-  border: none;  
+  border: none;
   border-radius: 50%;
   display: inline-block;
   opacity: 0.5;
@@ -91,10 +91,10 @@ button:hover {
     background: #37517e;
 }
 body{
-    background:  #b8b3b3;; 
+    background:  #b8b3b3;;
 }
 /* Style the form */
-#regForm {
+#theform {
   background-color: #ffffff;
   margin: 100px auto;
   padding: 40px;
@@ -133,30 +133,28 @@ input {
 
 
 
-  <form id="regForm" action="">
+  <form id="theform" action="{{ route('consult.execute') }}" method="post">
+
+    @csrf
 
     <h1>Consulter votre demande:</h1>
-    
+
     <!-- One "tab" for each step in the form: -->
     <div class="">Numéro de la demande:
-      <p><input placeholder="..." type="number"></p>
-       </div>  
-   
+      <p><input placeholder="..." type="number" name="no_demande"></p>
+       </div>
+
     <div style="overflow:auto;">
       <div style="float:right;">
-        <button type="button" id="" onclick="" class="btn btn-success">Consulter</button>
+        <button type="submit" id="" onclick="" class="btn btn-success">Consulter</button>
        </div>
     </div>
-    
-  
-    
+
+
+
     </form>
-</body>
 
-
-
-
-  <!-- ======= Footer ======= -->
+    <!-- ======= Footer ======= -->
   <footer id="footer">
 
     <!-- <div class="footer-newsletter">
@@ -238,14 +236,10 @@ input {
     </div>
 </footer><!-- End Footer -->
 
+<script src="{{ asset('js/app.js') }}"></script>
 
 
 
+</body>
 
-
-
-
-
-
-
-
+</html>

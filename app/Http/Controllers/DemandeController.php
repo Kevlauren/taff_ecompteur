@@ -21,13 +21,13 @@ class DemandeController extends Controller
     {
         $demandes = Demande::all();
         // return view('admin.demandes.index', compact('demandes'));
-      
+
         if (Auth::check()) {
             if (Auth::user()->is_admin == 1) {
-                
-                return view('admin.demandes.index', compact('demandes')); 
+
+                return view('admin.demandes.index', compact('demandes'));
             }else {
-                
+
                 return view('agentsbee.demandes.index', compact('demandes'));
             }
         }
@@ -72,7 +72,7 @@ class DemandeController extends Controller
      */
     public function create()
     {
-        return view('agentsbee.demandes.create');
+        return view('agentsbee.demandews.create');
     }
 
     /**
@@ -114,7 +114,7 @@ class DemandeController extends Controller
      */
     public function edit(Demande $demande)
     {
-        return view('admin.demandes.edit', compact('demande')); 
+        return view('admin.demandes.edit', compact('demande'));
     }
 
     /**
