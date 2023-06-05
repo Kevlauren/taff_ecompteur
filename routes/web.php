@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SendingController;
 use App\Http\Controllers\ConsultingController;
+use App\Http\Controllers\DevisController;
 
 /*
 |--------------------------------------------------------------------------
@@ -92,6 +93,7 @@ Route::middleware(['auth', 'agentsbee'])->name('agentsbee.')->prefix('agentsbee'
     Route::resource('demandeur', DemandeurController::class);
     Route::resource('visites', VisiteController::class);
     Route::resource('calendrier', CalendrierController::class);
+    Route::resource('devis', DevisController::class);
 
     Route::delete('demandes_mass_destroy', [DemandeController::class, 'massDestroy'])->name('demandes.mass_destroy');
     Route::post('calendrierAjax', [CalendrierController::class, 'ajax']);

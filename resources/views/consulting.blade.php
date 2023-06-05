@@ -141,7 +141,7 @@ input {
 
     <!-- One "tab" for each step in the form: -->
     <div class="">Numéro de la demande:
-      <p><input placeholder="..." type="number" name="no_demande"></p>
+      <p><input placeholder="..." type="text" name="no_demande"></p>
        </div>
 
     <div style="overflow:auto;">
