@@ -38,6 +38,8 @@ class DevisController extends Controller
 
         }
 
+        // ici on recherche la demande addressée et on met à jour son statut
+
         $demande = Demande::find($request->demande_id);
 
         $demande->update([
@@ -47,6 +49,8 @@ class DevisController extends Controller
         $link = route('fees.pay',[
             'demande_id' => $demande->no_demande
         ]);
+
+        // ici on se base sur la demande pour appeller le demandeur puis on push une notification
 
         $demande->demandeur->notify(new DevisNotification(public_path($this->path) . $name,$link));
 

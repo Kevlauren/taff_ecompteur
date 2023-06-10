@@ -45,7 +45,14 @@
 
         {{-- Gars flemme de gérer style donc y aura juste un boutton san style --}}
 
-
+        <kkiapay-widget amount="<montant-a-preleve-chez-le-client>"
+            key="766aae30e42111edbc3a9963ea980b02"
+            url="/"
+            position="center"
+            sandbox="true"
+            data=""
+            callback="/">
+        </kkiapay-widget>
 
     </section>
 
@@ -149,21 +156,6 @@
         // });
 
     </script>
-
-<kkiapay-widget amount="<montant-a-preleve-chez-le-client>"
-    key="766aae30e42111edbc3a9963ea980b02"
-    url="/"
-    position="center"
-    sandbox="true"
-    data=""
-    callback="/">
-</kkiapay-widget>
-
-
-
-
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
