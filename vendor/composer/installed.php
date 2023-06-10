@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '323ea26e7fc23fefd8c1f8198e9a6eeb1554353e',
+        'reference' => 'f611debfcc673e1275cc3ec3bf0384961013d089',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -397,6 +397,17 @@
                 0 => 'v8.83.27',
             ),
         ),
+        'kkiapay/kkiapay-php' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '39ebb357812cc7edec42476dc8c358e48259c97e',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../kkiapay/kkiapay-php',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
+            'dev_requirement' => false,
+        ),
         'kodova/hamcrest-php' => array(
             'dev_requirement' => true,
             'replaced' => array(
@@ -424,7 +435,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '323ea26e7fc23fefd8c1f8198e9a6eeb1554353e',
+            'reference' => 'f611debfcc673e1275cc3ec3bf0384961013d089',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

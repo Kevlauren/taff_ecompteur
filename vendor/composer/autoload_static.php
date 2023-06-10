@@ -19,14 +19,15 @@ class ComposerStaticInit1da509828e888d9297e807e525f244b4
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
+        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
+        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
-        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
-        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
+        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '265b4faa2b3a9766332744949e83bf97' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/helpers.php',
         'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
@@ -34,7 +35,6 @@ class ComposerStaticInit1da509828e888d9297e807e525f244b4
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
-        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         '6b34c85f7b1ad6faa15aa12109e030f2' => __DIR__ . '/..' . '/realrashid/sweet-alert/src/functions.php',
     );
@@ -127,6 +127,10 @@ class ComposerStaticInit1da509828e888d9297e807e525f244b4
             'Laravel\\Sanctum\\' => 16,
             'Laravel\\Sail\\' => 13,
             'Laravel\\Breeze\\' => 15,
+        ),
+        'K' => 
+        array (
+            'Kkiapay\\' => 8,
         ),
         'I' => 
         array (
@@ -416,6 +420,10 @@ class ComposerStaticInit1da509828e888d9297e807e525f244b4
         array (
             0 => __DIR__ . '/..' . '/laravel/breeze/src',
         ),
+        'Kkiapay\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kkiapay/kkiapay-php/src',
+        ),
         'Illuminate\\Support\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Macroable',
@@ -559,8 +567,9 @@ class ComposerStaticInit1da509828e888d9297e807e525f244b4
         'App\\Http\\Controllers\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/DashboardController.php',
         'App\\Http\\Controllers\\DemandeController' => __DIR__ . '/../..' . '/app/Http/Controllers/DemandeController.php',
         'App\\Http\\Controllers\\DemandeurController' => __DIR__ . '/../..' . '/app/Http/Controllers/DemandeurController.php',
+        'App\\Http\\Controllers\\DevisController' => __DIR__ . '/../..' . '/app/Http/Controllers/DevisController.php',
         'App\\Http\\Controllers\\FormController' => __DIR__ . '/../..' . '/app/Http/Controllers/FormController.php',
-        'App\\Http\\Controllers\\ReseauController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReseauController.php',
+        'App\\Http\\Controllers\\RoutesController' => __DIR__ . '/../..' . '/app/Http/Controllers/RoutesController.php',
         'App\\Http\\Controllers\\SendingController' => __DIR__ . '/../..' . '/app/Http/Controllers/SendingController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Controllers\\VisiteController' => __DIR__ . '/../..' . '/app/Http/Controllers/VisiteController.php',
@@ -587,6 +596,8 @@ class ComposerStaticInit1da509828e888d9297e807e525f244b4
         'App\\Models\\Reseau' => __DIR__ . '/../..' . '/app/Models/Reseau.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\Visite' => __DIR__ . '/../..' . '/app/Models/Visite.php',
+        'App\\Notifications\\DevisNotification' => __DIR__ . '/../..' . '/app/Notifications/DevisNotification.php',
+        'App\\Notifications\\NotifyUserOnRequest' => __DIR__ . '/../..' . '/app/Notifications/NotifyUserOnRequest.php',
         'App\\Policies\\DemandePolicy' => __DIR__ . '/../..' . '/app/Policies/DemandePolicy.php',
         'App\\Policies\\DemandeurPolicy' => __DIR__ . '/../..' . '/app/Policies/DemandeurPolicy.php',
         'App\\Policies\\VisitePolicy' => __DIR__ . '/../..' . '/app/Policies/VisitePolicy.php',
@@ -717,6 +728,7 @@ class ComposerStaticInit1da509828e888d9297e807e525f244b4
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
         'Database\\Factories\\DemandeFactory' => __DIR__ . '/../..' . '/database/factories/DemandeFactory.php',
         'Database\\Factories\\DemandeurFactory' => __DIR__ . '/../..' . '/database/factories/DemandeurFactory.php',
+        'Database\\Factories\\ReseauFactory' => __DIR__ . '/../..' . '/database/factories/ReseauFactory.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Factories\\VisiteFactory' => __DIR__ . '/../..' . '/database/factories/VisiteFactory.php',
         'Database\\Seeders\\Admin' => __DIR__ . '/../..' . '/database/seeders/Admin.php',
@@ -2867,6 +2879,9 @@ class ComposerStaticInit1da509828e888d9297e807e525f244b4
         'Illuminate\\View\\ViewName' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewName.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+        'Kkiapay\\Constants' => __DIR__ . '/..' . '/kkiapay/kkiapay-php/src/Constants.php',
+        'Kkiapay\\Kkiapay' => __DIR__ . '/..' . '/kkiapay/kkiapay-php/src/Kkiapay.php',
+        'Kkiapay\\STATUS' => __DIR__ . '/..' . '/kkiapay/kkiapay-php/src/STATUS.php',
         'Laravel\\Breeze\\BreezeServiceProvider' => __DIR__ . '/..' . '/laravel/breeze/src/BreezeServiceProvider.php',
         'Laravel\\Breeze\\Console\\InstallCommand' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallCommand.php',
         'Laravel\\Breeze\\Console\\InstallsApiStack' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsApiStack.php',
