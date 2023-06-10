@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class Agentsbee
+class Agentcontrelec
 {
     /**
      * Handle an incoming request.

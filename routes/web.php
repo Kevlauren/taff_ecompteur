@@ -99,4 +99,12 @@ Route::middleware(['auth', 'agentsbee'])->name('agentsbee.')->prefix('agentsbee'
     Route::post('calendrierAjax', [CalendrierController::class, 'ajax']);
 });
 
+
+
+
+Route::middleware(['auth', 'agentcont'])->name('agentcont.')->prefix('agentcont')->group(function () {
+   
+   
+});
+
 require __DIR__ . '/auth.php';

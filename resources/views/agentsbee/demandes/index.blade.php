@@ -32,7 +32,7 @@
                                 <th width="10">
                                   Id
                                 </th>
-                                <th>Id demandeur</th>
+                                <th>No demande</th>
                                 <th>Nom demandeur</th>
                                 <th>Prenom demandeur</th>
                                 <th>Localite</th>
@@ -47,7 +47,9 @@
                             <tr data-entry-id="{{ $demande->id }}">
                               
                                 <td>{{ $demande->id }}</td>
-                                <td>{{ $demande->demandeur->id }}</td>
+                                <td>{{ $demande->no_demande }}</td>
+                                <td>{{ $demande->demandeur->nom }}</td>
+                                <td>{{ $demande->demandeur->prenom }}</td>
                                 {{-- <td>{{ $demande->demandeur->nom }}</td>
                                 <td>{{ $demande->demandeur->prenom }}</td>
                                 <td>{{ $demande->demandeur->localite }}</td> --}}
