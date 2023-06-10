@@ -69,5 +69,14 @@
                     <span>{{ __('Liste des paiements') }}</span></a>
             </li>
 
+            {{-- Envoie de devis avec lien de paiement --}}
+
+            <li class="nav-item {{ request()->is('agentsbee/devis') || request()->is('agentsbee/devis') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('agentsbee.devis.index') }}">
+                <i class="fas fa-folder"></i>
+                    <span>{{ __('Envoie de devis') }}</span></a>
+            </li>
+
+
 
         </ul>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Demande;
+
 use App\Models\Demandeur;
 use App\Notifications\DevisNotification;
 use Illuminate\Http\Request;
@@ -11,6 +12,13 @@ use Kkiapay\Kkiapay;
 
 class DevisController extends Controller
 {
+  
+   public function index()
+    {
+        $demandes = Demande::all();
+        return view('agentsbee.devis.index', compact('demandes'));
+
+    }
 
     public $path = 'uploads/devis/';
 
@@ -64,5 +72,6 @@ class DevisController extends Controller
         $gateway = new Kkiapay(env('KKIA_PUBLIC'),env('KKIA_PRIVATE'),env('KKIA_SECRET'));
 
     }
+
 
 }
