@@ -30,7 +30,7 @@ class Demande extends Model
     // }
 
     public function demandeur(){
-        return $this->belongsTo(Demandeur::class);
+        return $this->belongsTo(Demandeur::class,'demandeur_id');
 
     }
 

@@ -14,6 +14,8 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SendingController;
 use App\Http\Controllers\ConsultingController;
+use App\Http\Controllers\RoutesController;
+use Illuminate\Support\Facades\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +42,10 @@ Route::resource('forms', FormController::class);
 
 // Route::post('store', [SendingController::class, 'store']);
 Route::resource('data', SendingController::class);
+
+Route::get('paiement/{demande_id}',[RoutesController::class,'pay_vue'])->name('fees.pay');
+
+Route::get('paiement/{demande_id}/success',[RoutesController::class,'success_processing'])->name('fees.pay.success');
 
 
 Route::get('/download', function(Request $request){
