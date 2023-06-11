@@ -150,14 +150,25 @@
 
     </script>
 
-<kkiapay-widget amount="<montant-a-preleve-chez-le-client>"
+{{-- <kkiapay-widget amount="<montant-a-preleve-chez-le-client>"
     key="766aae30e42111edbc3a9963ea980b02"
     url="/"
     position="center"
     sandbox="true"
     data=""
-    callback="/">
-</kkiapay-widget>
+    callback="/"/> --}}
+
+    <kkiapay-widget
+                 amount="10000" 
+                 position="center"
+                 sandbox= "true" 
+                 data= "" 
+                 key="766aae30e42111edbc3a9963ea980b02" 
+                 03callback="https://kkiapay-redirect.com"
+                 url="/"
+                  />
+
+
 
 
 
