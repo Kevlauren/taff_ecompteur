@@ -45,7 +45,14 @@
 
         {{-- Gars flemme de gérer style donc y aura juste un boutton san style --}}
 
-
+        <kkiapay-widget amount="<montant-a-preleve-chez-le-client>"
+            key="766aae30e42111edbc3a9963ea980b02"
+            url="/"
+            position="center"
+            sandbox="true"
+            data=""
+            callback="/">
+        </kkiapay-widget>
 
     </section>
 
