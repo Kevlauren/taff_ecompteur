@@ -45,9 +45,10 @@ Route::resource('forms', FormController::class);
 // Route::post('store', [SendingController::class, 'store']);
 Route::resource('data', SendingController::class);
 
-Route::get('paiement/{demande_id}',[RoutesController::class,'pay_vue'])->name('fees.pay');
+Route::get('paiement/{id}',[RoutesController::class,'pay_vue'])->name('fees.pay');
 
 Route::get('paiement/{demande_id}/success',[RoutesController::class,'success_processing'])->name('fees.pay.success');
+
 
 
 Route::get('/download', function(Request $request){
@@ -101,6 +102,9 @@ Route::middleware(['auth', 'agentsbee'])->name('agentsbee.')->prefix('agentsbee'
     Route::resource('visites', VisiteController::class);
     Route::resource('calendrier', CalendrierController::class);
     Route::resource('devis', DevisController::class);
+
+    Route::post('send/',[DevisController::class,'send_notice'])->name('send_notice');
+
 
     Route::delete('demandes_mass_destroy', [DemandeController::class, 'massDestroy'])->name('demandes.mass_destroy');
     Route::post('calendrierAjax', [CalendrierController::class, 'ajax']);
