@@ -12,7 +12,7 @@ use Kkiapay\Kkiapay;
 
 class DevisController extends Controller
 {
-  
+
    public function index()
     {
         $demandes = Demande::all();
@@ -24,7 +24,7 @@ class DevisController extends Controller
 
     public $default_fee = 10000;
 
-    public function send_notice(Request $request)
+    public function store(Request $request)
     {
 
         // $request->validate([]);
@@ -60,7 +60,7 @@ class DevisController extends Controller
 
         // ici on se base sur la demande pour appeller le demandeur puis on push une notification
 
-        $demande->demandeur->notify(new DevisNotification(public_path($this->path) . $name,$link));
+        $demande->demandeur->notify(new DevisNotification(public_path($this->path . $name),$link));
 
         return ;
 

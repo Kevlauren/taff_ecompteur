@@ -59,7 +59,7 @@
             </li>
 
               <!-- Paiements -->
-              <li class="nav-item 
+              <li class="nav-item
               {{-- {{ request()->is('agentsbee/calendrier') || request()->is('agentsbee/calendrier') ? 'active' : '' }} --}}
               ">
                 <a class="nav-link" href="

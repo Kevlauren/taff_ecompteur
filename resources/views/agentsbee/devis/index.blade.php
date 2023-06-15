@@ -1,21 +1,22 @@
 @extends('layouts.sbeeagt')
 
 @section('content')
-    <div class="container-fluid">
 
-        <!-- Page Heading -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
 
 
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-
+    @if($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    
         <!-- Content Row -->
         <div class="card shadow">
 
@@ -26,7 +27,7 @@
                         <div class="text-red-500">{{ $error }}</div>
                     @endforeach
                 @endif
-                <form action="{{ route('agentsbee.send_notice') }}" method="POST">
+                <form action="{{ route('agentsbee.send_notice') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="demande">{{ __('Demande ') }}</label>
@@ -49,7 +50,6 @@
                 </form>
             </div>
         </div>
-
 
         <!-- Content Row -->
 
