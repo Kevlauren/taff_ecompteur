@@ -1,6 +1,7 @@
 @extends('layouts.sbeeagt')
 
 @section('content')
+
 <div class="container-fluid">
 
     <!-- Page Heading -->
@@ -15,25 +16,33 @@
             </ul>
         </div>
     @endif
-
-<!-- Content Row -->
+    
+        <!-- Content Row -->
         <div class="card shadow">
 
             <div class="card-body">
-                <form action="" method="POST" enctype="multipart/form-data">
+
+                @if ($errors->any())
+                    @foreach ($errors->all() as $error)
+                        <div class="text-red-500">{{ $error }}</div>
+                    @endforeach
+                @endif
+                <form action="{{ route('agentsbee.send_notice') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="demande">{{ __('Demande ') }}</label>
-                        <select name="demande_id" id="id" class="form-control">
+                        <select name="id" id="id" class="form-control" >
                             @foreach ($demandes as $demande)
-                                <option value="{{ $demande->id }}">{{ $demande->id }} -  {{ $demande->demandeur->nom }} {{ $demande->demandeur->prenom }}</option>
+                                <option value="{{ $demande->id }}">{{ $demande->id }} - {{ $demande->demandeur->nom }}
+                                    {{ $demande->demandeur->prenom }}</option>
                             @endforeach
 
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="devis">{{ __('Devis') }}</label>
-                        <input type="file" class="form-control" id="devis" placeholder="{{ __('devis établi') }}" name="devis" />
+                        <input type="file" class="form-control" id="devis" placeholder="{{ __('devis établi') }}"
+                            name="devis" required/>
                     </div>
 
 
@@ -42,20 +51,19 @@
             </div>
         </div>
 
+        <!-- Content Row -->
 
-    <!-- Content Row -->
-
-</div>
+    </div>
 @endsection
 
 
 @push('style-alt')
-<link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet" />
 @endpush
 
 @push('script-alt')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
-{{-- <script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
+    {{-- <script>
     Dropzone.options.photoDropzone = {
         url: "{{ route('admin.clients.storeMedia') }}",
         maxFilesize: 2, // MB
@@ -82,7 +90,7 @@
         }
         },
         init: function () {
-            @if(isset($client) && $client->photo)
+            @if (isset($client) && $client->photo)
                 var file = {!! json_encode($client->photo) !!}
                     this.options.addedfile.call(this, file)
                 this.options.thumbnail.call(this, file, "{{ $client->photo->getUrl('thumb') }}")

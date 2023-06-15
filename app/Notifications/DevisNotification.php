@@ -20,6 +20,8 @@ class DevisNotification extends Notification
     public function __construct($devis,$payment_link)
     {
         $this->devis = $devis;
+        // $this->devis = public_path() . '/' . $storagePath;
+
         $this->payment_link = $payment_link;
     }
 

@@ -7,8 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('css/style.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="https://cdn.kkiapay.me/k.js"></script>
     <style>
         #imglogo {
@@ -24,10 +25,12 @@
         }
     </style>
 </head>
+
 <body>
     <header id="header" class="fixed-top" style="background-color: #37517e;">
         <div class="container d-flex align-items-center">
-            <a href="{{ asset('starting')}}" class="logo me-auto"><img src="images/logo.png" alt="" class="img-fluid" id="imglogo"></a>
+            <a href="{{ asset('starting') }}" class="logo me-auto"><img src="images/logo.png" alt=""
+                    class="img-fluid" id="imglogo"></a>
 
 
             <nav id="navbar" class="navbar">
@@ -35,7 +38,8 @@
                     <li><a class="nav-link scrollto active" href="#hero">Acceuil</a></li>
                     <li><a class="nav-link scrollto" href="#about" style="margin-left:40px;">A propos</a></li>
                     <li><a class="nav-link scrollto" href="#contact" style="margin-left:40px;">Contact</a></li>
-                    <a href="{{route('consult')}}" class="btn btn-primary text-center" style="margin-left:40px;">Consulter statut demande</a>
+                    <a href="{{ route('consult') }}" class="btn btn-primary text-center"
+                        style="margin-left:40px;">Consulter statut demande</a>
                     <ul>
             </nav><!-- .navbar -->
         </div>
@@ -45,14 +49,66 @@
 
         {{-- Gars flemme de gérer style donc y aura juste un boutton san style --}}
 
-        <kkiapay-widget amount="<montant-a-preleve-chez-le-client>"
+
+        <form style=" width:600px; margin:auto;">
+
+            <div class="container" style="margin-top: 50px;">
+                <div class="title" style="text-align: center;">
+                    <h2>Paiement</h2>
+                </div>
+
+               
+                    
+               
+                    <div class="mb-3">
+                        <label for="demande_id" class="form-label">N° Demande</label>
+                        <input type="text" class="form-control" id="demande_id" value="{{ $demande_id }}">
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="nom" class="form-label">Nom</label>
+                        <input type="text" class="form-control" id="nom" value="">
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="prenom" class="form-label">Prénom</label>
+                        <input type="text" class="form-control" id="prenom">
+                    </div>
+                    <div class="mb-3">
+                        <label for="date" class="form-label">Date</label>
+                        <input type="date" class="form-control" id="date">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">$</span>
+                        <span class="input-group-text">0.00</span>
+                        <input type="text" class="form-control" id="montant">
+                    </div>
+                    <div style="text-align:center">
+
+
+                        <kkiapay-widget amount="{{ $fee }}" position="center" sandbox="true" data=""
+                            key="766aae30e42111edbc3a9963ea980b02" callback="{{ $callback }}" url="/" />
+
+                    </div>
+                
+
+
+
+
+            </div>
+        </form>
+
+
+        {{-- <kkiapay-widget amount="<montant-a-preleve-chez-le-client>"
             key="766aae30e42111edbc3a9963ea980b02"
             url="/"
             position="center"
             sandbox="true"
             data=""
-            callback="/">
-        </kkiapay-widget>
+            callback="{{ $callback }}">
+        </kkiapay-widget> --}}
+
+
 
     </section>
 
@@ -82,7 +138,7 @@
                         <h3>SBEE</h3>
                         <p>
                             01 BP 123 Cotonou <br>
-                           République du Bénin <br><br>
+                            République du Bénin <br><br>
                             <strong>Téléphone:</strong> 21 30 76 00<br>
                             <strong>Email:</strong> info@sbee.bj<br>
                         </p>
@@ -100,7 +156,8 @@
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Our Services</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Demande de racccordement en ligne</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Demande de racccordement en
+                                    ligne</a></li>
                             <!-- <li><i class="bx bx-chevron-right"></i> <a href="#"></a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
@@ -139,25 +196,22 @@
     </footer><!-- End Footer -->
 
 
-    <script>
 
-        // openKkiapayWidget({amount:'{{ $fee }}',position:"right",callback:'{{ $callback }}',
-        //     data:""
-        //     theme:"green",
-        //     key:"18465e5428051c885eb5456663b63d8caa24ef19"
-        // });
 
-        // addSuccessListener(response => {
-        //     console.log(response);
-        // });
 
-        // addFailedListener(error => {
-        //     console.log(error);
-        // });
 
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 
 </html>

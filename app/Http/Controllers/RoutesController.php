@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Demande;
 use Illuminate\Http\Request;
 
 class RoutesController extends Controller
@@ -11,7 +12,7 @@ class RoutesController extends Controller
     {
         return view('payment')->with([
             'fee' => 10000,
-            'callback' => route('fees.pay.success',['demande_id' => $demande_id])
+            'callback' => route('fees.pay.success',['demande_id' => Demande::find($demande_id)]),
         ]);
     }
 
@@ -19,7 +20,6 @@ class RoutesController extends Controller
     {
 
         dd($request);
-
         return "Paiement réussi";
 
     }

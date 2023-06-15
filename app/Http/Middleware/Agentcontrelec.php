@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class Agentsbee
+class Agentcontrelec
 {
     /**
      * Handle an incoming request.
@@ -16,9 +16,9 @@ class Agentsbee
      */
     public function handle(Request $request, Closure $next)
     {
-        // if (!auth()->check() || !auth()->user()->role == "SBEE") {
-        //     abort(403);
-        // }
+        if (!auth()->check() || !auth()->user()->role == "CONTRELEC") {
+            abort(403);
+        }
         return $next($request);
     }
 }

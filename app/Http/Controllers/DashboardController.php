@@ -12,6 +12,7 @@ class DashboardController extends Controller
     public function index(){
         // $demandeurs = DB::select('select count(id) from demandeurs');
         $demandeurs = DB::table('demandeurs')->count();
+        
         return view('agentsbee.dashboard', ['demandeurs'=>$demandeurs]);
     }
 }

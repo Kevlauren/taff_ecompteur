@@ -4,6 +4,7 @@ namespace App\Http;
 
 use App\Http\Middleware\Admin;
 use App\Http\Middleware\Admin as MiddlewareAdmin;
+use App\Http\Middleware\Agentcontrelec;
 use App\Http\Middleware\Agentsbee;
 use App\Models\User;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
@@ -69,5 +70,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'admin' => Admin::class,
         'agentsbee' => Agentsbee::class,
+        'agentcont' => Agentcontrelec::class,
     ];
 }
