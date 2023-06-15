@@ -4,7 +4,7 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    
+
 
     @if($errors->any())
         <div class="alert alert-danger">
@@ -18,30 +18,30 @@
 
 <!-- Content Row -->
         <div class="card shadow">
-            
+
             <div class="card-body">
-                <form action="" method="POST">
+                <form action="" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="demande">{{ __('Demande ') }}</label>
-                        <select name="id" id="id" class="form-control">
+                        <select name="demande_id" id="id" class="form-control">
                             @foreach ($demandes as $demande)
                                 <option value="{{ $demande->id }}">{{ $demande->id }} -  {{ $demande->demandeur->nom }} {{ $demande->demandeur->prenom }}</option>
                             @endforeach
-    
+
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="devis">{{ __('Devis') }}</label>
                         <input type="file" class="form-control" id="devis" placeholder="{{ __('devis établi') }}" name="devis" />
                     </div>
-                    
-                 
+
+
                     <button type="submit" class="btn btn-danger btn-block">{{ __('Save') }}</button>
                 </form>
             </div>
         </div>
-    
+
 
     <!-- Content Row -->
 
